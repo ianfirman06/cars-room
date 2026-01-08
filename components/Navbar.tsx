@@ -15,40 +15,40 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
+        <div className="flex justify-between h-20 items-center">
           <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-black tracking-tighter text-blue-700">LUXE<span className="text-gray-900">DRIVE</span></span>
+            <span className="text-2xl font-black tracking-tighter text-blue-500">LUXE<span className="text-zinc-100">DRIVE</span></span>
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden lg:flex space-x-10">
             {navLinks.map((link) => (
               <Link 
                 key={link.path} 
                 to={link.path}
-                className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+                className="text-sm font-semibold text-zinc-400 hover:text-white transition-all hover:tracking-widest"
               >
                 {link.name}
               </Link>
             ))}
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Link 
               to="/inventory" 
-              className="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all shadow-md"
+              className="bg-blue-600 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-blue-500 transition-all shadow-lg shadow-blue-900/20"
             >
               Cari Mobil
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-700 focus:outline-none"
+              className="text-zinc-100 focus:outline-none p-2 bg-zinc-900 rounded-lg"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {isOpen ? (
@@ -64,25 +64,27 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-white border-t">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="lg:hidden bg-zinc-950 border-t border-white/10 animate-fade-in">
+          <div className="px-4 pt-4 pb-6 space-y-2">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50"
+                className="block px-3 py-3 text-lg font-medium text-zinc-300 hover:bg-zinc-900 rounded-xl"
               >
                 {link.name}
               </Link>
             ))}
-            <Link
-              to="/inventory"
-              onClick={() => setIsOpen(false)}
-              className="block w-full text-center bg-blue-600 text-white px-3 py-2 rounded-md text-base font-medium"
-            >
-              Cari Mobil
-            </Link>
+            <div className="pt-4">
+              <Link
+                to="/inventory"
+                onClick={() => setIsOpen(false)}
+                className="block w-full text-center bg-blue-600 text-white px-4 py-4 rounded-xl text-lg font-bold"
+              >
+                Cari Mobil
+              </Link>
+            </div>
           </div>
         </div>
       )}

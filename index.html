@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -14,10 +13,28 @@
             scroll-behavior: smooth;
         }
         .glass {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(15, 15, 15, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09090b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3f3f46;
         }
     </style>
 <script type="importmap">
@@ -32,8 +49,7 @@
 }
 </script>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="bg-zinc-950 text-zinc-100">
     <div id="root"></div>
 </body>
 </html>
-

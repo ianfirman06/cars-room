@@ -1,0 +1,7 @@
+{
+  "name": "Copy of LuxeDrive - Premier Car Dealership",
+  "description": "A high-end car dealership landing page and management system featuring inventory, financing, and AI-powered recommendations.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
